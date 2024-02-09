@@ -64,18 +64,9 @@ ini_set('display_errors', 0);
         </div>
     </div>
     <script>
-        var data = localStorage.getItem('key');
-
-        // Parse the JSON string into an object
-        var parsedData = JSON.parse(data);
-        var nama = parsedData.data.nama;
-
-        // Access the 'nama' property of the object
-
-
-
-        // Display the user's name from the array in the HTML
-        document.getElementById('userName').innerText = nama;
+        var data = localStorage.getItem('nama');
+        var nama = data;
+            document.getElementById('userName').innerText = nama;
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
