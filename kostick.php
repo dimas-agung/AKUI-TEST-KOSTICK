@@ -2220,12 +2220,19 @@
 
         
 
-      var data = localStorage.getItem('key');
+        var data = localStorage.getItem('key');
 
-      var parsedData = JSON.parse(data);
-      var nik = parsedData.data.nik;
-    //   var nama = parsedData.data.nama;
-    //   var unit_id = parsedData.data.unit_id;
+        if (data) {
+        var parsedData = JSON.parse(data);
+        if (parsedData && parsedData.nik) {
+            var nik = parsedData.nik;
+        } else {
+            console.error("Properti 'nik' tidak ditemukan dalam struktur data.");
+        }
+        } else {
+        console.error("Data tidak ditemukan di localStorage.");
+        }
+    
 
       $.ajax({
         type: 'POST',
